@@ -1,0 +1,389 @@
+@charset "UTF-8";
+
+/* ウェブフォントの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&family=Noto+Serif+JP&family=Shippori+Mincho&display=swap');
+
+/* 全体に適用する */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: normal;
+  }
+
+/* 共通 */
+:root {
+--light-color: #fff;
+--dark-color: #888;
+--color: #4682b4;
+--font: 'Cormorant Infant', 'Shippori Mincho', serif;
+}
+
+/* 基本設定 */
+body {
+background: var(--light-color);
+line-height: 1.7;
+letter-spacing: 0.1em;
+text-align: center;
+font-size: 13px;
+color: var(--dark-color);
+}
+
+/* リンク */
+a {
+text-decoration: none;
+font-weight: bold;
+color: var(--color);
+}
+
+.open-button,
+#close-modal {
+    appearance: none;
+    background: transparent;
+    border: thin solid var(--color);
+    color: var(--color);
+    padding: 0.2em 0.5em;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1em;
+    font-weight: normal;
+    cursor: pointer;
+    transition: color 1s, background-color 1s;
+}
+
+.open-button:hover,
+#close-modal:hover {
+    background-color: var(--color);
+    color: var(--light-color);
+}
+
+/* ヘッダー */
+header {
+position: relative;
+margin: 5em auto;
+width: 80%;
+height: 80vh;
+height: 80dvh;
+}
+
+header::before,
+header::after {
+position: absolute;
+display: block;
+content: '';
+top: 0;
+z-index: -1;
+width: 50%;
+height: 100%;
+}
+
+header::before {
+left: 0;
+background: linear-gradient(to bottom, #e6e6fa, #b0e0e6);
+}
+
+header::after {
+right: 0;
+background: linear-gradient(to top, #e6e6fa, #b0e0e6);
+}
+
+/* 大見出し */
+header h1 {
+display: inline-block;
+margin-top: 5em;
+margin-bottom: 1em;
+transform: rotate(-5deg);
+font-family: var(--font);
+color: var(--color);
+}
+
+/* 補足情報 */
+header aside {
+margin: 0 auto 1em;
+width: 50%;
+}
+
+/* ヘッダー内リンク */
+header a {
+padding: 0.2em 0.5em;
+border: thin solid var(--color);
+font-weight: normal;
+transition: color 1s;
+}
+
+/* リンクホバー */
+header a:hover {
+background-color: var(--color);
+color: var(--light-color);
+}
+
+/* メインコンテンツ */
+main {
+margin: 3em auto;
+width: 80%;
+}
+
+
+/* セクション */
+section {
+margin-bottom: 3em;
+}
+
+/* 小見出し */
+section h2 {
+margin-bottom: 0.5em;
+transform: rotate(-5deg);
+font-family: var(--font);
+}
+
+section h3 {
+display: inline-block;
+margin-bottom: 0.5em;
+border-bottom: thin solid var(--dark-color);
+font-family: var(--font);
+}
+
+/* 光芒 */
+.oath {
+    color: #6e50d8;
+    font-family: var(--font);
+    text-shadow:
+        0 0 5px rgba(176, 224, 230, 0.8),
+        0 0 12px rgba(230, 230, 250, 0.8);
+        animation: twinkle 4s ease-in-out infinite;
+
+}
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.05;
+    }
+}
+
+/* リスト系 */
+section ul:not(.box ul),
+section ol:not(.box ol) {
+margin: 1em auto;
+}
+
+section ul {
+list-style: none;
+}
+
+section ol {
+list-style-position: inside;
+}
+
+section ul.yoko li {
+display: inline-block;
+}
+
+/* ボックス */
+.box,
+.boxwrap {
+margin: 1em auto;
+padding: 0.5em 1em;
+border: thin solid #b0e0e6;
+}
+
+.box,
+.boxwrap,
+article {
+text-align: justify;
+word-break: break-all;
+line-break: strict;
+}
+
+.boxwrap {
+display: flex;
+justify-content: space-between;
+}
+
+.boxleft {
+flex-basis: 20%;
+}
+
+.boxleft img {
+display: block;
+width: 100%;
+height: auto;
+border-radius: 50%;
+}
+
+.boxright {
+flex-basis: 75%;
+}
+
+/* タグ */
+.tags {
+    margin-top: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.tags span {
+    padding: 0.2em 0.6em;
+    border: thin solid #b0e0e6;
+    font-size: 0.8em;
+    color: var(--dark-color);
+}
+
+/* アーティクル */
+article {
+margin: 0 auto;
+padding: 3em;
+max-width: 600px;
+}
+
+/* アーティクル見出し */
+article h1 {
+margin-bottom: 1em;
+transform: rotate(-5deg);
+text-align: center;
+}
+
+/* アーティクル筆者 */
+article small {
+    display: block;
+    margin-top: 0.5em;
+    text-align: right;
+    font-size: 0.75em;
+    color: #aaa;
+}
+
+/* メニュー */
+.menu {
+text-align: center;
+margin: 1em auto 1.5em;
+}
+
+.menu li {
+display: inline-block;
+margin: 0 0.5em;
+}
+
+.menu li a {
+font-weight: bold;
+}
+
+/* フォーム系 */
+textarea,
+input[type] {
+-webkit-appearance: none;
+padding: 0.5em;
+background: var(--color);
+border: none;
+border-radius: 0;
+font-size: 11px;
+color: #fff;
+}
+
+textarea {
+width: 200px;
+height: 70px;
+}
+
+input[type=text] {
+width: 80px;
+}
+
+input[type=submit] {
+width: auto;
+}
+
+/* 横幅768px以上で読み込む */
+@media screen and (min-width: 768px) {
+body {
+font-size: 14px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section {
+    flex-basis: 48%;
+}
+}
+
+/* 横幅1024px以上で読み込む */
+@media screen and (min-width: 1024px) {
+body {
+font-size: 15px;
+}
+}
+
+/* 横幅1440px以上で読み込む */
+@media screen and (min-width: 1440px) {
+body {
+font-size: 16px;
+}
+
+/* Attentionページ */
+main.attention {
+    max-width: 700px;
+}
+@media screen and (min-width: 768px) {
+    main.attention {
+        display: block;
+    }
+    main.attention section {
+        width: 100%;
+    }
+}
+.attention .box {
+    width: fit-content;
+    max-width: 100%;
+}
+
+/* ポップアップ */
+
+.pop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    justify-content: center;
+    align-items: center;
+}
+.popContent {
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    padding: 3em;
+
+    background: var(--light-color);
+    border: thin solid #b0e0e6;
+
+    text-align: left;
+    line-height: 2;
+}
+#close-modal {
+    display: block;
+    margin: 1.5em auto 0;
+    padding: 0.2em 0.5em;
+    background: transparent;
+    border: thin solid var(--color);
+    font-family: 'Noto Serif JP', serif;
+    color: var(--color);
+    cursor: pointer;
+    transition: color 1s, background-color 1s;
+}
+
+#close-modal:hover {
+    background-color: var(--color);
+    color: var(--light-color);
+}
+}
