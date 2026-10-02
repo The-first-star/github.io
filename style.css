@@ -39,7 +39,7 @@ color: var(--color);
 }
 
 .open-button,
-#close-modal {
+#close {
     appearance: none;
     background: transparent;
     border: thin solid var(--color);
@@ -53,7 +53,7 @@ color: var(--color);
 }
 
 .open-button:hover,
-#close-modal:hover {
+#close:hover {
     background-color: var(--color);
     color: var(--light-color);
 }
@@ -366,7 +366,7 @@ main.attention {
     text-align: left;
     line-height: 2;
 }
-#close-modal {
+#close {
     display: block;
     margin: 1.5em auto 0;
     padding: 0.2em 0.5em;
@@ -378,7 +378,7 @@ main.attention {
     transition: color 1s, background-color 1s;
 }
 
-#close-modal:hover {
+#close:hover {
     background-color: var(--color);
     color: var(--light-color);
 }

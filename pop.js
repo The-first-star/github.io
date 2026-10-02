@@ -1,5 +1,5 @@
 const preface = document.getElementById("preface");
-const closeModal = document.getElementById("close-modal");
+const close = document.getElementById("close");
 const readMore = document.getElementById("pop");
 
 if (readMore && preface) {
@@ -10,13 +10,13 @@ if (readMore && preface) {
     });
 }
 
-if (closeModal && preface) {
+if (close && preface) {
     const closePreface = function () {
         preface.style.display = "none";
         document.body.style.overflow = "";
     };
 
-    closeModal.addEventListener("click", closePreface);
+    close.addEventListener("click", closePreface);
 
     preface.addEventListener("click", function (event) {
         if (event.target === preface) {

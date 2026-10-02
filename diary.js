@@ -1,3 +1,7 @@
+const formatText = text => Array.isArray(text)
+    ? text.map(part => part ? `<p>${part}</p>` : "<p><br></p>").join("")
+    : text;
+
 fetch("diary.json")
     .then(response => response.json())
     .then(entries => {
@@ -9,10 +13,11 @@ fetch("diary.json")
             entries.slice(0, 2).forEach(entry => {
 
                 const article = document.createElement("article");
+                const text = formatText(entry.text);
 
                 article.innerHTML = `
                     <h3>${entry.date}</h3>
-                    <p>${entry.text}</p>
+                    ${text}
                     <small>written by ${entry.author}</small>
                 `;
 
@@ -27,10 +32,11 @@ fetch("diary.json")
             entries.forEach(entry => {
 
                 const article = document.createElement("article");
+                const text = formatText(entry.text);
 
                 article.innerHTML = `
                     <h3>${entry.date}</h3>
-                    <p>${entry.text}</p>
+                    ${text}
                     <small>written by ${entry.author}</small>
                 `;
 
